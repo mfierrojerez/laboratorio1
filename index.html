@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Memoria de Animales</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <h1>Memoria de Animales</h1>
+    <div class="controls">
+      <label class="control">
+        Dificultad
+        <select id="level" aria-label="Seleccionar dificultad">
+          <option value="easy">Fácil (6 pares)</option>
+          <option value="medium">Medio (8 pares)</option>
+          <option value="hard">Difícil (12 pares)</option>
+        </select>
+      </label>
+      <button id="startBtn" class="btn primary">Jugar</button>
+      <button id="resetBtn" class="btn ghost" title="Reiniciar mismo nivel">Reiniciar</button>
+    </div>
+  </header>
+
+  <section class="hud" aria-live="polite">
+    <div class="hud-item" title="Tiempo restante">⏱ <span id="time">00:00</span></div>
+    <div class="hud-item" title="Movimientos">🌀 <span id="moves">0</span></div>
+    <div class="hud-item" title="Pares encontrados">✅ <span id="pairs">0</span></div>
+    <div class="hud-item" title="Puntaje actual">⭐ <span id="score">0</span></div>
+    <div class="hud-item" title="Mejor puntaje">🏆 <span id="best">—</span></div>
+  </section>
+
+  <main id="board" class="board" role="grid" aria-label="Tablero de memoria"></main>
+
+  <!-- Región de mensajes para lectores de pantalla -->
+  <div id="sr-announcer" class="sr-only" aria-live="polite"></div>
+
+  <!-- Modal de fin de nivel -->
+  <div id="modal" class="modal" hidden>
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <h2 id="modalTitle">¡Nivel completado!</h2>
+      <p id="summary"></p>
+      <div class="modal-actions">
+        <button id="modalBtn" class="btn primary">Aceptar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal de tiempo agotado -->
+  <div id="modalTime" class="modal" hidden>
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modalTitleTime">
+      <h2 id="modalTitleTime">Tiempo agotado</h2>
+      <p id="summaryTime"></p>
+      <div class="modal-actions">
+        <button id="modalTimeBtn" class="btn primary">Reintentar</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
