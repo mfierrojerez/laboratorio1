@@ -12,19 +12,21 @@ function init(){
   // --- Catálogo de cartas (usa rutas de GIF directamente) ---
   // Asegúrate de que los nombres de archivo existan en assets/gif/
   const ANIMALS = [
-    { key:'pikachu',    file:'assets/gif/pikachu.gif' },
-    { key:'charmander', file:'assets/gif/charmander.gif' },
-    { key:'squirtle',   file:'assets/gif/squirtle.gif' },
-    { key:'bulbasaur',  file:'assets/gif/bulbasaur.gif' },
-    { key:'eevee',      file:'assets/gif/eevee.gif' },
-    { key:'jigglypuff', file:'assets/gif/jigglypuff.gif' },
-    { key:'psyduck',    file:'assets/gif/psyduck.gif' },
-    { key:'snorlax',    file:'assets/gif/snorlax.gif' },
-    { key:'meowth',     file:'assets/gif/meowth.gif' },
-    { key:'vulpix',     file:'assets/gif/vulpix.gif' },
-    { key:'charizard',  file:'assets/gif/charizard.gif' },
-    { key:'gengar',     file:'assets/gif/gengar.gif' },
-  ];
+  { key:'aipom',     file:'assets/gif/aipom.gif' },
+  { key:'arbok',     file:'assets/gif/arbok.gif' },
+  { key:'charmander',file:'assets/gif/charmander.gif' },
+  { key:'chikorita', file:'assets/gif/chikorita.gif' },
+  { key:'cyndaquil', file:'assets/gif/cyndaquil.gif' },
+  { key:'dragonair', file:'assets/gif/dragonair.gif' },
+  { key:'eevee',     file:'assets/gif/eevee.gif' },
+  { key:'ghastly',   file:'assets/gif/ghastly.gif' },
+  { key:'poochyena', file:'assets/gif/poochyena.gif' },
+  { key:'psyduck',   file:'assets/gif/psyduck.gif' },
+  { key:'rattata',   file:'assets/gif/rattata.gif' },
+  { key:'suicune',   file:'assets/gif/suicune.gif' },
+  { key:'umbreon',   file:'assets/gif/umbreon.gif' },
+  { key:'vaporeon',  file:'assets/gif/vaporeon.gif' },
+];
 
   // --- DOM refs ---
   const els = {
@@ -117,18 +119,19 @@ function init(){
   }
 
   function cardToHTML(card, idx){
-    // Alt descriptivo para A11y
-    return `
-      <button class="card" data-index="${idx}" role="gridcell" aria-pressed="false" aria-label="Carta oculta">
-        <div class="card-inner">
-          <div class="face back"><span class="pattern">🐾</span></div>
-          <div class="face front">
-            <img src="${card.img}" alt="GIF de ${card.key}">
-          </div>
+  return `
+    <button class="card" data-index="${idx}" role="gridcell" aria-pressed="false" aria-label="Carta oculta">
+      <div class="card-inner">
+        <div class="face back">
+          <img class="pattern-img" src="assets/pokeball.png" alt="" aria-hidden="true">
         </div>
-      </button>
-    `;
-  }
+        <div class="face front">
+          <img src="${card.img}" alt="GIF de ${card.key}">
+        </div>
+      </div>
+    </button>
+  `;
+}
 
   function onCardClick(btn){
     if(!state.started || state.lock) return;

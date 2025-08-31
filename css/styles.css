@@ -75,7 +75,13 @@ select{
   display:grid; place-items:center;
   background:radial-gradient(120% 80% at 10% 10%, #1f2937, #0b0f1c);
 }
-.face.back .pattern{ font-size:32px; opacity:.75 }
+
+.face.back .pattern-img{
+  width:100%; height:100%;
+  object-fit:cover;   /* usa contain si quieres que se vea completa sin recortar */
+  display:block; 
+  opacity:0.95;       /* opcional */
+}
 
 /* Front face */
 .face.front{
