@@ -86,12 +86,7 @@ select{
 .face.front img{
   width:100%; height:100%; object-fit:cover; display:block;
 }
-.face.front .emoji{
-  font-size:56px; filter:drop-shadow(0 4px 8px rgba(0,0,0,.5));
-}
-.face.front.no-img{
-  background:linear-gradient(160deg, #0f1629, #141a2f);
-}
+
 
 /* States */
 .card.matched .face{ outline:3px solid var(--ok); animation:pulse .7s ease }
