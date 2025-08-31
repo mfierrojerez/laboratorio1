@@ -87,7 +87,7 @@ select{
 }
 
 /* Front face */
-.face.front img{
+.face.front {
   width:100%;
   height:100%;
   max-width:100%;
